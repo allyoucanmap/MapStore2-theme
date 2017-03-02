@@ -1,10 +1,26 @@
+button:focus {
+	outline: 0 !important;
+}
+
+.shadow{
+    -webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+}
+
+.shadow-soft{
+    -webkit-box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
+	-moz-box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
+	box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
+}
+
 /**********************************************/
 /** GENERAL************************************/
 /**********************************************/
 
 .dropdown-menu .dropdown-header{
-    background-color: #078AA3;
-    color: #ffffff;
+    background-color: @ms2-color-primary;
+    color: @ms2-color-background;
     padding: 15px;
     font-weight: bold;
 }
@@ -12,10 +28,10 @@
 .dropdown-menu .glyphicon {
     font-size: @icon-size-md;
     margin-right: 15px;
-    margin-top: -7px;
-    color: #078AA3;
+    color: @ms2-color-primary;
     vertical-align: middle;
 }
+
 /**********************************************/
 /** NAVBAR  ***********************************/
 /**********************************************/
@@ -47,6 +63,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+    background-color: @ms2-color-background;
 }
 
 .nav-body {
@@ -58,7 +75,7 @@
 }
 /* button dividers */
 #mapstore-navbar-container .dropdown-toggle, #mapstore-navbar-container .square-button {
-  border-left: 1px solid #5C9FB4;
+  border-left: 1px solid @ms2-color-info;
 }
 
 /* -------*/
@@ -75,25 +92,24 @@ div.MapSearchBar .form-control:focus {
 div.MapSearchBar .input-group-addon{
     height: @square-btn-size;
     width: @square-btn-size;
-    color: #078aa3;
-    margin-top: -8px;
-    margin-left: -5px;
+    color: @ms2-color-primary;
+    background-color: @ms2-color-background;
     border: 0px;
     border-radius: 0px;
-    font-size:28px;
+    font-size: @icon-size;
 }
  #mapstore-navbar .navbar-dx .MapSearchBar .input-group-addon .searchclear {
-    font-size:28px;
+    font-size: @icon-size;
  }
 
-
 #mapstore-navbar .navbar-dx .search-result-list{
-    top: 55px;
+    top: @square-btn-size + @padding-left-square;
 }
+
 .navbar-dx.shadow, .navbar-dx .MapSearchBar .input-group {
-	-webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 #mapstore-navbar #helpbadge-null {
   position: absolute;
@@ -166,23 +182,33 @@ div.MapSearchBar .input-group-addon{
         right: auto;
     }
 }
+
+#mapstore-navbar .form-group{
+    margin-bottom: 0;
+}
+
+#mapstore-navbar .search-result-list {
+  background-color: @ms2-color-background;
+}
+
 /*--------- */
 /* Dropdown */
 /* -------- */
 .navbar-dx .dropdown-menu .dropdown-header, .navbar-home .dropdown-menu .dropdown-header {
-    background-color: #078AA3;
+    background-color: @ms2-color-primary;
 
 }
 .navbar-dx .dropdown-menu, .navbar-home .dropdown-menu  {
   text-transform: uppercase;
 }
 .navbar-dx .dropdown-menu li, .navbar-home .dropdown-menu  li {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid @ms2-color-background; /* temp */
 }
 .navbar-dx .dropdown-menu li a, .navbar-home .dropdown-menu li a{
   max-height: @square-btn-size;
+  color: @ms2-color-text;
 }
-.navbar-dx .dropdown-menu li a span, .navbar-home .dropdown-menu li a span{
+.navbar-dx .dropdown-menu li a span {
   position: relative;
 }
 /**********************************************/
@@ -193,7 +219,7 @@ div.MapSearchBar .input-group-addon{
 }
 /* button dividers */
 .mapToolbar.btn-group-vertical .btn {
-  border-bottom: 2px solid #5C9FB4;
+  border-bottom: 2px solid @ms2-color-info;
 }
 /* no divider for the last button */
 .mapToolbar.btn-group-vertical .btn:last-child {
@@ -211,12 +237,20 @@ div#mapstore-globalspinner {
 #mapstore-drawermenu .glyphicon {
 	font-size: @icon-size;
 }
+
+#mapstore-drawermenu .navHeader > .glyphicon-1-close {
+  float: left;
+  display: block;
+  height: @square-btn-size;
+  width: @square-btn-size;
+  padding: @padding-left-square 0 0 @padding-left-square;
+}
 #mapstore-drawermenu .navHeader .glyphicon-remove {
-	color: #078aa3;
+	color: @ms2-color-primary;
 }
 
 #mapstore-drawermenu .panel-default > .panel-heading {
-	color: #078AA3;
+	color: @ms2-color-primary;
 	font-weight: bold;
   background: transparent;
 }
@@ -246,11 +280,11 @@ div#mapstore-globalspinner {
 	 margin-top: 0px;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-layer .visibility-check.glyphicon {
-	font-size: @icon-size-md;
-	margin-top: -5px;
+	/*font-size: @icon-size-md;
+	margin-top: -5px;*/
 }
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon.visibility-check.checked {
-		color: #078aa3;
+		color: @ms2-color-primary;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-group > .visibility-check.glyphicon {
 	margin-top: 5px;
@@ -258,21 +292,24 @@ div#mapstore-globalspinner {
 /* GROUPS*/
 #mapstore-drawermenu #mapstore-layers .group-expanded, .group-collapsed {
 		padding: 5px 0px;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid @ms2-color-shade-lighter;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-title {
 	background:  transparent;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-layer .glyphicon {
 	font-size: 23px;
-	margin-top: -2px;
-	color: #078aa3;
+	margin: -2px 4px 0 4px;
+	color: @ms2-color-primary;
+  height:25px;
+  width:25px;
+  display: block;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-open,#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-close {
-	color: #078aa3;
+	color: @ms2-color-primary;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-group {
-	border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid @ms2-color-shade-lighter;
 	padding: 5px 0;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-children {
@@ -326,34 +363,38 @@ div#mapstore-globalspinner {
     padding: 0;
 }
 
+#mapstore-getfeatureinfo .panel-heading {
+    background-color: @ms2-color-background;
+}
+
 /* Leaflet minimap style */
 
 .leaflet-control-minimap {
-    border:solid rgba(7,138,163, 1.0) 4px !important;
+    border:solid @ms2-color-primary 4px !important;
 }
 .leaflet-control-minimap a {
-    background-color: rgba(7,138,163, 1.0) !important;
+    background-color: @ms2-color-primary !important;
 }
 .leaflet-control-minimap-toggle-display{
-    background-image: url("./img/toggle.svg") !important;
+    background-image: url("../default/img/toggle.svg") !important;
 }
 
 .leaflet-oldie .leaflet-control-minimap-toggle-display{
-    background-image: url("./img/toggle.png") !important;
+    background-image: url("../default/img/toggle.png") !important;
 }
 
 /* OpenLayers minimap style */
 
 .ol-custom-overviewmap button {
-    background-color: rgba(7,138,163,1) !important;
+    background-color: @ms2-color-primary !important;
 }
 
 .ol-custom-overviewmap button:hover, .ol-custom-overviewmap .ol-control button:focus {
-    background-color: rgba(7,138,163,0.7) !important;
+    background-color: @ms2-color-primary !important;
 }
 
 .ol-custom-overviewmap:not(.ol-collapsed) {
-    background: rgba(7,138,163,1) !important;
+    background: @ms2-color-primary !important;
     border-radius: 3px !important;
 }
 
@@ -366,15 +407,15 @@ div#mapstore-globalspinner {
 }
 
 .btn-success{
-    background-color: #398439 !important;
+    background-color: @ms2-color-success !important;
 }
 
 .btn-success:hover{
-    background-color: #449d44 !important;
+    background-color: @ms2-color-success-hover !important;
 }
 
 div.ol-scale-line.ol-unselectable{
-		border: 2px solid #000;
+		border: 2px solid @ms2-color-shade-darker;
 		border-top: none;
 		line-height: 1.0;
 		border-radius: 0px;
@@ -392,7 +433,7 @@ div.ol-scale-line.ol-unselectable{
 div.ol-scale-line-inner{
 	  border: 0px;
     border-top: 0;
-    color: #white;
+    color: @ms2-color-background;
     font-size: 11px;
     text-align: left;
     margin: 0px;
@@ -415,7 +456,7 @@ div.ol-scale-line-inner{
     height: 180px;
     margin: 0px;
     padding: 0px;
-    border-color: #eeeeee;
+    border-color: @ms2-color-shade-lighter;
 }
 
 .dropzone-thumbnail-container div.dropzone-content-image-added {
@@ -425,8 +466,8 @@ div.ol-scale-line-inner{
 .dropzone .dropzone-content-image-added {
     visibility: hidden;
     padding-top:40px;
-    color: white;
-    text-shadow: black 2px 2px 2px;
+    color: @ms2-color-background;
+    text-shadow: @ms2-color-shade-darker 2px 2px 2px;
     vertical-align: middle;
     top: 0;
     left:0;
@@ -471,7 +512,7 @@ div.ol-scale-line-inner{
 }
 
 .dropzone:hover .dropzone-remove span{
-    color:white;
+    color: @ms2-color-background;
 }
 
 .dropzone-remove span {
@@ -479,7 +520,7 @@ div.ol-scale-line-inner{
 }
 
 .dropzone-remove span:hover{
-    color: red !important;
+    color: @ms2-color-danger !important;
 }
 
 .dropzone-errorBox{
@@ -494,71 +535,43 @@ div.ol-scale-line-inner{
 
 .modal-header button.close:hover {
     opacity: 0.5;
-    color: white;
+    color: @ms2-color-background;
 }
 
 .modal-header button.close:focus {
     opacity: 0.5;
-    color: white;
+    color: @ms2-color-background;
 }
 
 .modal-body {
-    background-color: white;
+    background-color: @ms2-color-background;
 }
 
 .react-draggable .draggable-header {
     cursor: move;
 }
 
-
-/*.floatstop {
-	clear: both;
-}
-
-.float-right {
-	float: right;
-}
-
-.float-left {
-	float: left;
-}
-
-.margin-base{
-	margin: @padding-large-vertical @padding-large-horizontal
-}
-
-button:focus {
-	outline: 0 !important;
-}
-
-.border-grey {
-	border:grey solid 1px;
-}
-
-.shadow{
-    -webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-}
-
-.shadow-soft{
-    -webkit-box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
-	-moz-box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
-	box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
-}*/
-
 .option-icon { /*- icon in lists -*/
 	font-size: @font-size-base;
-	margin-right: @padding-medium-horizontal;
-	color: @brand-primary;
+	margin-right: @padding-left-square;
+	color: @ms2-color-primary;
 }
 
 /*--------------------- btn with icon -----------------------------------*/
 
-.btn-primary.active,.btn-primary.focus,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open>.dropdown-toggle.btn-primary{
-	color:#fff;
-    background-color:@link-primary-light-color;
-    border-color:none; /*remove active color */
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary{
+  color: @ms2-color-background;
+  background-color:@ms2-color-primary-hover;
+  border-color:none; /*remove active color */
+}
+.btn-primary.active,
+.btn-primary:active ,
+.open > .dropdown-toggle.btn-primary{
+  background-color: @ms2-color-primary-active !important;
 }
 
 .no-border{
@@ -607,33 +620,33 @@ button:focus {
 
 .square-button .glyphicon {
 	font-size: @icon-size;
-	padding: @padding-top-square 0 0 @padding-left-square;
+	padding: 0 0 0 @padding-left-square;
 	margin:0;
 }
 
 .square-button-md .glyphicon {
 	font-size: @icon-size-md;
-	padding: @padding-top-square-md 0 0 @padding-left-square-md;
+	padding: 0 0 0 @padding-left-square-md;
 	margin:0;
 }
 
 .square-button-sm .glyphicon {
 	font-size: @icon-size-sm;
-	padding: @padding-top-square-sm 0 0 @padding-left-square-sm;
+	padding: 0 0 0 @padding-left-square-sm;
 	margin:0;
 }
 
 .list-group .list-group-item:not(:last-child)  {
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @ms2-color-shade-lighter;
 
 }
 
 .list-group list-group-item a:hover {
-	background-color: @gray-lighter;
+	background-color: @ms2-color-shade-lighter;
 }
 
 .list-group li:not(:last-child)  {
-	border-bottom: 1px solid @gray-lighter;
+	border-bottom: 1px solid @ms2-color-shade-lighter;
 }
 
 /* ---------- btn groups ---------------------------------- */
@@ -642,28 +655,28 @@ button:focus {
 	height: @square-btn-size;
 }
 .button-group .btn:not(:last-child) {
-	border-right: 1px solid @link-primary-light-color;
+	border-right: 1px solid @ms2-color-primary-hover;
 }
 
 .button-group-md {
  	height: @square-btn-medium-size;
 }
 .button-group-md .btn:not(:last-child) {
-	border-right: 1px solid @link-primary-light-color;
+	border-right: 1px solid @ms2-color-primary-hover;
 }
 
 .button-group-sm {
  	height: @square-btn-small-size;
 }
 .button-group-sm .btn:not(:last-child) {
-	border-right: 1px solid @link-primary-light-color;
+	border-right: 1px solid @ms2-color-primary-hover;
 }
 
 .button-group-vertical {
 	width: @square-btn-size;
 }
 .button-group-vertical .btn:not(:last-child) {
-	border-bottom: 1px solid @link-primary-light-color;
+	border-bottom: 1px solid @ms2-color-primary-hover;
 	display: block;
 }
 
@@ -671,7 +684,7 @@ button:focus {
  	width: @square-btn-medium-size;
 }
 .button-group-vertical-md .btn:not(:last-child) {
-	border-bottom: 1px solid @link-primary-light-color;
+	border-bottom: 1px solid @ms2-color-primary-hover;
 	display: block;
 }
 
@@ -679,32 +692,266 @@ button:focus {
  	width: @square-btn-small-size;
 }
 .button-group-vertical-sm .btn:not(:last-child) {
-	border-bottom: 1px solid @link-primary-light-color;
+	border-bottom: 1px solid @ms2-color-primary-hover;
 	display: block;
 }
 
-/* --------------------CSS FONT MAPPING for base_with_less.html-------------------- */
-/*
-.font-map  ul li{
-list-style:none;
-height: 40px;
-float:left;
-width:290px;
-margin-right:15px;
-margin-bottom: 30px;
+.gridcard-button {
+    height: 30px;
+    width: 30px;
+    padding: floor((30 - @icon-size-sm)/2);
 }
 
-.font-map  ul li .glyphicon{
-font-size:30px;
-border: 1px solid white;
+.gridcard-button span.glyphicon {
+    font-size: @icon-size-sm;
 }
 
-.font-map ul li input  {
-border: 1px solid @gray;
-font-size:@font-size-base;
-border-radius: 4px;
+#mapstore-layer-settings {
+  background-color: @ms2-color-background;
 }
 
-.btn-icons-list .btn {
-	margin: 2px;
-}*/
+.user-edit-dialog, .group-edit-dialog{
+   background: @ms2-color-background;
+}
+
+
+/* query panel */
+
+#mapstore-drawermenu #toc-query-container {
+    background-color: darken(@ms2-color-background, 2%);
+}
+
+#mapstore-drawermenu #query-form-panel .glyphicon {
+    font-size: @icon-size-sm;
+}
+
+#query-form-panel .btn-default {
+    color: @ms2-color-primary;
+    border-color: @ms2-color-primary;
+}
+
+#query-form-panel .btn-default:hover {
+    background-color: @ms2-color-shade-lighter;
+}
+
+#query-form-panel input.form-control {
+    border: 1px solid @ms2-color-shade-lighter;
+}
+
+#query-form-panel button:disabled {
+    color: @ms2-color-text-disabled;
+    background-color: @ms2-color-disabled;
+}
+
+#query-form-panel .filter-buttons {
+    background-color: darken(@ms2-color-background, 2%);
+}
+
+#query-form-panel .filter-buttons:hover {
+    background-color: @ms2-color-shade-lighter;
+}
+
+#query-form-panel .remove-filter-button {
+    height: @icon-size-sm;
+    width: @icon-size-sm;
+}
+
+#mapstore-drawermenu #query-form-panel .remove-filter-button .glyphicon {
+    font-size: @icon-size-sm;
+}
+
+#mapstore-drawermenu #query-form-panel .remove-filter-button span {
+    line-height: @icon-size-sm;
+}
+
+#query-form-panel input {
+    border: 1px solid @ms2-color-shade-lighter;
+}
+
+#query-form-panel {
+    overflow: hidden;
+}
+
+#query-form-panel .query-toolbar {
+    height: 50px;
+    background-color: @ms2-color-background;
+}
+
+#query-form-panel #query-toolbar-title {
+    color: @ms2-color-primary;
+}
+
+#query-form-panel .querypanel {
+    background-color: darken(@ms2-color-background, 2%);
+}
+
+#query-form-panel .querypanel .panel-heading {
+    color: @ms2-color-text;
+}
+
+#query-form-panel .querypanel .panel-heading span {
+    font-size: 14px;
+}
+
+#query-form-panel .querypanel .panel-heading .panel-title:hover {
+    color: @ms2-color-shade-light;
+}
+
+#query-form-panel .query-content > .container-fluid {
+    border-top: 1px dashed @ms2-color-shade-lighter;
+}
+
+
+#query-form-panel .querypanel > .query-filter-container {
+    border-bottom: 1px solid @ms2-color-shade-lighter;
+}
+
+#mapstore-drawermenu #query-form-panel .querypanel > .query-filter-container {
+    margin-right: 60px;
+    margin-left: 10px;
+}
+
+#query-form-panel .panel  .panel .filter-group-panel {
+    background-color: @ms2-color-background;
+}
+
+#query-form-panel .panel  .panel .filter-group-panel button {
+    background-color: @ms2-color-background;
+}
+
+#query-form-panel .panel  .panel .filter-group-panel button:hover {
+    background-color: @ms2-color-shade-lighter;
+}
+
+#query-form-panel hr {
+    border-top: 1px dashed @ms2-color-shade-lighter;
+}
+
+#query-form-panel h5 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: center;
+}
+
+#query-form-panel .filter-text-desc {
+    text-align: center;
+}
+
+#query-form-panel div.details-panel {
+    background-color: @ms2-color-background;
+}
+
+#query-form-panel .details-panel .detail-title span {
+    line-height: @icon-size-sm;
+}
+
+#query-form-panel .details-panel button {
+    background-color: @ms2-color-background;
+}
+
+#query-form-panel .details-panel button.remove-filter-button:hover {
+    background-color: @ms2-color-shade-lighter;
+}
+
+#query-form-panel .details-panel button.remove-filter-button span {
+    cursor: pointer;
+}
+
+/* end - query panel */
+
+/* select input */
+
+.rw-widget {
+  background-color: @ms2-color-background !important;
+}
+
+
+#helpbadge-scaleBox {
+    background-color: @ms2-color-primary;
+    color: @ms2-color-text-primary;
+}
+
+#mapstore-navbar #helpbadge-search-help {
+    background-color: @ms2-color-primary;
+    color: @ms2-color-text-primary;
+}
+
+/* tutorial */
+.group-thumb,
+.user-thumb {
+  background-color: lighten(@ms2-color-background, 2%);
+}
+/* end - card  */
+
+/* tutorial */
+.joyride-tooltip__button--primary {
+    background-color: @ms2-color-primary !important;
+}
+
+.joyride-tooltip__button--primary:active, .joyride-tooltip__button--primary:focus, .joyride-tooltip__button--primary:hover {
+    background-color: @ms2-color-primary !important;
+}
+/* end -tutorial */
+
+/* loading circle */
+.ms2-loading {
+    background-color: @ms2-color-primary !important;
+    border-bottom: 2px solid @ms2-color-info !important;
+}
+
+.ms2-loading .circle-wrapper .circle:before {
+    background-color: @ms2-color-text-primary !important;
+}
+/* end - loading circle */
+
+/* scale bar */
+.leaflet-control-scale-line {
+		background-color: @ms2-color-primary;
+}
+
+.ol-scale-line {
+		background-color: @ms2-color-primary;
+}
+/* end - scale bar */
+
+/* feauture grid */
+
+.ag-fresh .ag-header, .ag-fresh .ag-tool-panel-container {
+    background: @ms2-color-primary !important;
+    color: @ms2-color-text-primary;
+    font-family: @font-family-base;
+}
+.ag-fresh .ag-tool-panel-container .ag-list-selection{
+    color: #000000;
+}
+.ag-fresh .ag-paging-button {
+    color: @ms2-color-primary;
+    background-color: @ms2-color-background;
+    border: @ms2-color-primary 1px solid;
+}
+.ag-fresh .ag-paging-page-summary-panel {
+    color: @ms2-color-primary;
+}
+
+.ag-fresh .ag-paging-panel {
+		background-color: @ms2-color-background;
+}
+
+.ag-fresh .ag-body {
+		background-color: @ms2-color-background !important;
+}
+
+.ag-fresh .ag-body .ag-row-even {
+		background-color: @ms2-color-background !important;
+}
+
+.ag-fresh .ag-body .ag-row-odd {
+		background-color: darken(@ms2-color-background,5%) !important;
+}
+/* end - feauture grid */
+
+/* card home */
+.map-thumb-description {
+		color: #000000;
+}
+/* end - card home */
