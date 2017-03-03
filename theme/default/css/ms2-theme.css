@@ -55,6 +55,7 @@
     top: 0;
     bottom: 0;
     width: 100%;
+	background-color: #ffffff;
 }
 
 .nav-body {
@@ -219,6 +220,15 @@ div#mapstore-globalspinner {
 #mapstore-drawermenu .glyphicon {
 	font-size: 28px;
 }
+
+#mapstore-drawermenu .navHeader > .glyphicon-1-close {
+  float: left;
+  display: block;
+  height: 50px;
+  width: 50px;
+  padding: 11px 0 0 11px;
+}
+
 #mapstore-drawermenu .navHeader .glyphicon-remove {
 	color: #078aa3;
 }
@@ -253,10 +263,6 @@ div#mapstore-globalspinner {
 	 font-size: 30px;
 	 margin-top: 0px;
 }
-#mapstore-drawermenu #mapstore-layers .toc-default-layer .visibility-check.glyphicon {
-	font-size: 30px;
-	margin-top: -5px;
-}
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon.visibility-check.checked {
 		color: #078aa3;
 }
@@ -275,6 +281,9 @@ div#mapstore-globalspinner {
 	font-size: 23px;
 	margin-top: -2px;
 	color: #078aa3;
+	height:25px;
+  width:25px;
+  display: block;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-open,#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-close {
 	color: #078aa3;
@@ -514,6 +523,175 @@ div.ol-scale-line-inner{
     background-color: white;
 }
 
+.modal-footer {
+    background-color: white;
+}
+
 .react-draggable .draggable-header {
     cursor: move;
 }
+
+.react-draggable {
+    background-color: #ffffff;
+}
+
+/* feauture grid */
+
+.ag-fresh .ag-header, .ag-fresh .ag-tool-panel-container {
+    background: #078aa3 !important;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+.ag-fresh .ag-tool-panel-container .ag-list-selection{
+    color: #000000;
+}
+.ag-fresh .ag-paging-button {
+    color: #078aa3;
+    background-color: #ffffff;
+    border: #078aa3 1px solid;
+}
+.ag-fresh .ag-paging-page-summary-panel {
+    color: #078aa3;
+}
+
+.ag-fresh .ag-paging-panel {
+		background-color: #ffffff;
+}
+
+.ag-fresh .ag-body {
+		background-color: #ffffff !important;
+}
+
+.ag-fresh .ag-body .ag-row-even {
+		background-color: #ffffff !important;
+}
+
+.ag-fresh .ag-body .ag-row-odd {
+		background-color: #eeeeee !important;
+}
+/* end - feauture grid */
+
+/* identify */
+#mapstore-getfeatureinfo .swipeable-view .panel-heading {
+    background-color: white;
+}
+/* end - identify */
+
+/* help */
+#helpbadge-scaleBox {
+    background-color: #ffffff;
+    color: #078aa3;
+}
+
+#mapstore-navbar #helpbadge-search-help {
+    background-color: #ffffff;
+    color: #078aa3;
+}
+/* end - help */
+
+/* gridcard */
+.gridcard-button {
+    height: 30px;
+    width: 30px;
+}
+.gridcard-button span.glyphicon {
+    font-size: 30px;
+    margin-top: -6px;
+    margin-left: -12px;
+}
+/* end - gridcard*/
+
+/* user/grouppppp card */
+.group-thumb,
+.user-thumb {
+  background-color: #F7F4ED;
+}
+/* end - user/grouppppp card */
+
+/* tutorial */
+.joyride-tooltip__button--primary {
+    background-color: #078aa3 !important;
+}
+
+.joyride-tooltip__button--primary:active, .joyride-tooltip__button--primary:focus, .joyride-tooltip__button--primary:hover {
+    background-color: #078aa3 !important;
+}
+/* end -tutorial */
+
+/* loading circle */
+.ms2-loading {
+    background-color: #078aa3 !important;
+    border-bottom: 2px solid #5C9FB4 !important;
+}
+
+.ms2-loading .circle-wrapper .circle:before {
+    background-color: #ffffff !important;
+}
+/* end - loading circle */
+
+/* scale bar */
+.leaflet-control-scale-line {
+		background-color: #078aa3 !important;
+        color: #ffffff;
+}
+
+.ol-scale-line {
+		background-color: #078aa3 !important;
+        color: #ffffff;
+}
+/* end - scale bar */
+
+/* query panel */
+
+#mapstore-drawermenu #toc-query-container {
+    background-color: #f7f7f7;
+}
+
+#query-form-panel button:disabled {
+    background-color: #5C9FB4;
+    color: #ffffff;
+}
+
+#query-form-panel .panel  .panel .filter-group-panel {
+    background-color: #ffffff;
+}
+
+#query-form-panel .panel  .panel .filter-group-panel button {
+    background-color: #ffffff;
+}
+
+#query-form-panel div.details-panel {
+    background-color: #ffffff;
+}
+
+#mapstore-drawermenu #query-form-panel .querypanel > .query-filter-container {
+    margin-right: 60px;
+    margin-left: 10px;
+}
+
+#query-form-panel .querypanel {
+    background-color: #f7f7f7;
+}
+
+#query-form-panel .query-content > .container-fluid {
+    border-top: 1px dashed #dedede;
+}
+
+#query-form-panel .querypanel > .query-filter-container {
+    border-bottom: 1px solid #dedede;
+}
+
+#query-form-panel hr {
+    border-top: 1px dashed #dedede;
+}
+
+#mapstore-drawermenu #query-form-panel .glyphicon {
+    font-size: 22px;
+}
+
+#query-form-panel input.form-control {
+    height: 32px;
+    border: 1px solid #dedede;
+}
+
+/* end - query panel */
